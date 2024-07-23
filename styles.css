@@ -1,0 +1,245 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+body.dark-mode .container {
+    background: #444;
+}
+
+header, .filter, .add-task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    color: #007BFF;
+}
+
+body.dark-mode header h1 {
+    color: #1E90FF;
+}
+
+.task-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+body.dark-mode .task-list li {
+    border-bottom: 1px solid #888;
+}
+
+.task-list li:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+body.dark-mode .task-list li:nth-child(odd) {
+    background-color: #555;
+}
+
+.task-list li:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+body.dark-mode .task-list li:nth-child(even) {
+    background-color: #666;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    background: #007BFF;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+button.delete {
+    background: #FF0000;
+}
+
+button.delete:hover {
+    background: #cc0000;
+}
+
+input[type="text"], input[type="date"], select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 28%;
+    margin-right: 2%;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext.warning {
+    background-color: #ffcc00;
+    color: #333;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Toggle Switch */
+.switch {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: auto;
+}
+
+.switch span {
+    margin: 0 10px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    background-color: #ccc;
+    border-radius: 34px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #007BFF;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Modal */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    max-width: 400px;
+    border-radius: 8px;
+    line-height: 1.6;
+}
+
+body.dark-mode .modal-content {
+    background-color: #444;
+    color: #f4f4f4;
+}
+
+.modal-content label,
+.modal-content input,
+.modal-content select,
+.modal-content button {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Settings Modal */
+#settingsModal .modal-content label {
+    font-size: 1.2em; /* Increase label font size */
+}
+
+#settingsModal .modal-content input[type="checkbox"] {
+    width: 25px;  /* Increase checkbox width */
+    height: 25px;  /* Increase checkbox height */
+    cursor: pointer;  /* Change cursor to pointer */
+}

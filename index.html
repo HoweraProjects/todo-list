@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Todo List</h1>
+            <div>
+                <button id="settingsButton">Settings</button>
+                <button id="deleteAll">Delete All</button>
+            </div>
+        </header>
+        <section class="filter">
+            <button id="filterAll">All</button>
+            <label class="switch">
+                <span>Filter: Pending</span>
+                <input type="checkbox" id="toggleSwitch">
+                <span class="slider"></span>
+                <span>Completed</span>
+            </label>
+        </section>
+        <section class="task-list">
+            <ul id="tasks"></ul>
+        </section>
+        <section class="add-task">
+            <input type="text" id="newTask" placeholder="New Task">
+            <input type="date" id="dueDate">
+            <select id="importance">
+                <option value="Important & Emergent">Important & Emergent</option>
+                <option value="Important & Not Emergent">Important & Not Emergent</option>
+                <option value="Not Important & Emergent">Not Important & Emergent</option>
+                <option value="Not Important & Not Emergent">Not Important & Not Emergent</option>
+            </select>
+            <button id="addTask">Add Task</button>
+        </section>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Settings</h2>
+            <label for="themeSwitch">Dark Mode:</label>
+            <input type="checkbox" id="themeSwitch">
+        </div>
+    </div>
+    
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Task</h2>
+            <label for="editTaskName">Task Name:</label><br>
+            <input type="text" id="editTaskName"><br>
+            <label for="editDueDate">Due Date:</label><br>
+            <input type="date" id="editDueDate"><br>
+            <label for="editImportance">Importance:</label><br>
+            <select id="editImportance">
+                <option value="Important & Emergent">Important & Emergent</option>
+                <option value="Important & Not Emergent">Important & Not Emergent</option>
+                <option
